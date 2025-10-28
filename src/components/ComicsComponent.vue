@@ -1,6 +1,20 @@
 <template>
     <div>
         <h1>COMICS</h1>
+        <div>
+            <form v-on:submit.prevent="newComic()">
+                <label>Tiutlo</label>
+                <input type="text" v-model="nuevoComic.titulo">
+                <label>Imagen:</label>
+                <input type="text" v-model="nuevoComic.imagen">
+                <label>Descripción: </label>
+                <input type="text" v-model="nuevoComic.descripcion"/>
+                <label>Año: </label>
+                <input type="number" v-model="nuevoComic.year"/>
+                <button>Nuevo comic</button>
+            </form>
+            
+        </div>
         <div v-if="comicFavorito != null" id="comicfavorito">
             <h2>Comic favorito</h2>
             <h3>Titulo: {{comicFavorito.titulo}}</h3>
@@ -66,12 +80,21 @@ import ComicComponent from './ComicComponent.vue';
                     , year: 2001
                     }
                 ],
-                comicFavorito: null
+                comicFavorito: null,
+                nuevoComic: {
+                    titulo: "",
+                    imagen: "",
+                    descripcion: "",
+                    year: 0
+                }
             }
         },
         methods:{
             cogerComic(comic){
                 this.comicFavorito = comic;
+            },
+            newComic(){
+                this.comics.push(this.nuevoComic);
             }
         }
     }
