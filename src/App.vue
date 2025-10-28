@@ -1,14 +1,17 @@
 <template>
-  <PadreDeportes />
+  <!-- <PadreDeportes /> -->
+  <NumerosPadre />
 </template>
 
 <script>
-import PadreDeportes from './components/PadreDeportes.vue';
+// import PadreDeportes from './components/PadreDeportes.vue';
+import NumerosPadre from './components/NumerosPadre.vue';
 
 export default {
   name: 'App',
   components: {
-    PadreDeportes
+    // PadreDeportes
+    NumerosPadre
   }
 }
 </script>
