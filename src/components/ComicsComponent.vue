@@ -20,8 +20,10 @@
             <h3>Titulo: {{comicFavorito.titulo}}</h3>
             <img :src="comicFavorito.imagen"/>
         </div>
-        <div id="comics" v-for="comic in comics" :key="comic">
-            <ComicComponent :comic="comic" v-on:comicfavorito="cogerComic"/>
+        <div id="comics" v-for="(comic, index) in comics" :key="comic">
+            <ComicComponent :index="index" :comic="comic" 
+            v-on:comicfavorito="cogerComic"
+            v-on:deleteComic="deleteComic"/>
         </div>
     </div>
 </template>
@@ -95,6 +97,9 @@ import ComicComponent from './ComicComponent.vue';
             },
             newComic(){
                 this.comics.push(this.nuevoComic);
+            },
+            deleteComic(index){
+                this.comics.splice(index,1);
             }
         }
     }

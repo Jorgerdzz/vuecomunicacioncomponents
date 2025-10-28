@@ -8,16 +8,20 @@
             verde: comic.year>2000
         }">Año: {{comic.year}}</h3>
         <button @click="enviarComic()">Marcar favorito</button>
+        <button @click="enviarIndex()">Eliminar comic</button>
     </div>
 </template>
 
 <script>
     export default{
         name: "ComicComponent",
-        props: ["comic"],
+        props: ["comic", "index"],
         methods:{
             enviarComic(){
                 this.$emit("comicfavorito", this.comic)
+            },
+            enviarIndex(){
+                this.$emit("deleteComic", this.index)
             }
         }
     }
