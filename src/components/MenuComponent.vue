@@ -19,8 +19,8 @@
             <li>
                 <router-link to="/doble">Numero doble</router-link>
             </li>
-            <li>
-                <router-link to="/doble/14">Numero doble</router-link>
+            <li v-for="num in numeros" :key="num">
+                <router-link :to="'/doble/' + num">Doble {{num}}</router-link>
             </li>
         </ul>
     </div>
@@ -28,7 +28,13 @@
 
 <script>
     export default {
-        name: "MenuComponent"
+        name: "MenuComponent",
+        data(){
+            return{
+                numeros: [90,60,78,10]
+            }
+        }
+        
     }
 </script>
 
