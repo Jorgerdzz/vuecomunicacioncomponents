@@ -1,27 +1,18 @@
 <template>
-  <!-- <PadreDeportes /> -->
-  <!-- <NumerosPadre /> -->
-  <!-- <ComicsComponent /> -->
-  <!-- <SeleccionMultiple /> -->
-  <SumaCheckbox/>
+  <MenuComponent/>
+  <router-view></router-view>
 </template>
 
 <script>
-import SumaCheckbox from './components/SumaCheckbox.vue'
-// import ComicsComponent from './components/ComicsComponent.vue';
-// import SeleccionMultiple from './components/SeleccionMultiple.vue';
-// import PadreDeportes from './components/PadreDeportes.vue';
-// import NumerosPadre from './components/NumerosPadre.vue';
+import MenuComponent from './components/MenuComponent.vue'
+
+
 
 
 export default {
   name: 'App',
   components: {
-    // PadreDeportes
-    // NumerosPadre
-    // ComicsComponent
-    // SeleccionMultiple
-    SumaCheckbox
+    MenuComponent
   }
 }
 </script>
